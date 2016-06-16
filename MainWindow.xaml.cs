@@ -206,7 +206,7 @@ namespace WpfApplication1
                     niynZadan(array);
                     break;
                 case ("10"):
-                    
+                    tenZadan(array);
                     break;
                 case ("11"):
                     
@@ -441,6 +441,22 @@ namespace WpfApplication1
             }
             otvet.Text += " = " + temp;
 
+        }
+        void tenZadan(int[] arr)
+        {
+            otvet.Text = "Массив:"; for (int i = 0; i < 10; i++)
+            {
+                otvet.Text += arr[i] + " ";
+
+            }
+            otvet.Text += "\n Ответ:";
+            int temp = 0;
+            for (int i = 1; i < 9; i++)
+            {
+                if ((arr[0] > arr[i]) && (arr[9] < arr[i])) { otvet.Text += arr[i] + " "; temp += 1; }
+
+            }
+            otvet.Text += "; \n" + temp + " элементов";
         }
 
 
