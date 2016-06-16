@@ -322,7 +322,7 @@ namespace WpfApplication1
             if (but3.IsChecked == true) { PO.Text = 3.ToString(); max.IsEnabled = false; min.IsEnabled = false; ZZ.IsEnabled = false; XX.IsEnabled = false; }
             else if (but2.IsChecked == true) { PO.Text = 2.ToString(); max.IsEnabled = true; min.IsEnabled = true; ZZ.IsEnabled = true; XX.IsEnabled = true; }
             else { PO.Text = 1.ToString(); max.IsEnabled = false; min.IsEnabled = false; ZZ.IsEnabled = false; XX.IsEnabled = false; }
-        }
+            }
 
 
     }
