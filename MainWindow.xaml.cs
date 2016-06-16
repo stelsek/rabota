@@ -197,7 +197,7 @@ namespace WpfApplication1
                     sixZadan(array); 
                     break;
                 case ("7"):
-                    
+                    sevenZadan(array);
                     break;
                 case ("8"):
                     
@@ -391,6 +391,22 @@ namespace WpfApplication1
             }
 
         }
+        void sevenZadan(int[] arr)
+        {
+            otvet.Text = "Массив:"; for (int i = 0; i < 10; i++)
+            {
+                otvet.Text += arr[i] + " ";
+            }
+            otvet.Text += "\n Ответ:";
+            int temp;
+            for (int j = 0; j < 9; j++)
+                for (int i = j + 1; i < 10; i++)
+                {
+
+                    if (21 > (arr[j] + arr[i])) otvet.Text += arr[j] + "+" + arr[i] + "=" + (arr[j] + arr[i] + "; ");
+                }
+        }
+
 
     }
 
