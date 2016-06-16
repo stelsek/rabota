@@ -212,7 +212,7 @@ namespace WpfApplication1
                     
                     break;
                 case ("12"):
-                    
+                    tweZadan(array);
                     break;
                 case ("13"):
                    
@@ -457,6 +457,85 @@ namespace WpfApplication1
 
             }
             otvet.Text += "; \n" + temp + " элементов";
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        void tweZadan(int[] arr)
+        {
+            otvet.Text = "Массив:"; int temp = Math.Abs(arr[1]);
+            for (int i = 0; i < 10; i++)
+            {
+                otvet.Text += arr[i] + " ";
+            }
+            otvet.Text += "\n Ответ:";
+            char[] array = Convert.ToString(temp).ToCharArray();
+            char[] array1;
+            int[] A = new int[10]; int Sov;
+            for (int j = 0; j < 10; j++)
+            {
+                Sov = 0;
+                if (j != 1)
+                {
+                    array1 = Convert.ToString(Math.Abs(arr[j])).ToCharArray();
+                    for (int i = (array.Length) - 1, R = (array1.Length) - 1; (i >= 0) && (R >= 0); R--, i--)
+                    {
+                        if (array[i] == array1[R]) Sov += 1;
+
+                    }
+                }
+                A[j] = Sov;
+            }
+            int bol = 0;
+            for (int i = 0; i < 10; i++)
+            {
+                if (A[i] > bol) bol = A[i];
+            }
+            if (bol != 0)
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    if (A[i] == bol) otvet.Text += arr[i] + " ";
+                }
+            }
+            else
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    Sov = 0;
+                    if (j != 1)
+                    {
+                        array1 = Convert.ToString(Math.Abs(arr[j])).ToCharArray();
+                        for (int i = (array.Length) - 1; i >= 0; i--)
+                            for (int R = (array1.Length) - 1; R >= 0; R--)
+                            {
+                                if (array[i] == array1[R]) Sov += 1;
+                            }
+                    }
+                    A[j] = Sov;
+                }
+                for (int i = 0; i < 10; i++)
+                {
+                    if (A[i] > bol) bol = A[i];
+                }
+                if (bol != 0)
+                {
+                    for (int i = 0; i < 10; i++)
+                    {
+                        if (A[i] == bol) otvet.Text += arr[i] + " ";
+                    }
+                }
+
+            }
         }
 
 
