@@ -201,25 +201,25 @@ namespace WpfApplication1
                     sevenZadan(array);
                     break;
                 case ("8"):
-                    
+                    etZadan(array);
                     break;
                 case ("9"):
-                    
+                    niynZadan(array);
                     break;
                 case ("10"):
-                    
+                    tenZadan(array);
                     break;
                 case ("11"):
                     eleZadan(array);
                     break;
                 case ("12"):
-                    
+                    tweZadan(array);
                     break;
                 case ("13"):
                    
                     break;
                 case ("14"):
-                    
+                    FoZadan(array);
                     break;
                 case ("15"):
                     
@@ -627,7 +627,190 @@ namespace WpfApplication1
             }
             otvet.Text += "\n Ответ:" + temp;
         }
+        void etZadan(int[] arr)
+        {
+            otvet.Text = "Массив:"; for (int i = 0; i < 10; i++)
+            {
+                otvet.Text += arr[i] + " ";
+                if (arr[i] % 5 == 0) arr[i] += 1;
+            }
+            otvet.Text += "\n Ответ:";
+            for (int i = 0; i < 10; i++)
+            {
+                otvet.Text += arr[i] + " ";
 
+            }
+        }
+        void niynZadan(int[] arr)
+        {
+            otvet.Text = "Массив:"; for (int i = 0; i < 10; i++)
+            {
+                otvet.Text += arr[i] + " ";
+
+            }
+            otvet.Text += "\n Ответ:";
+            int temp = 0;
+            for (int i = 0; i < 10; i++)
+            {
+                if (arr[i] % 3 != 0)
+                {
+                    if (temp == 0) otvet.Text += arr[i];
+                    temp += arr[i];
+                    otvet.Text += "+" + arr[i];
+                }
+
+            }
+            otvet.Text += " = " + temp;
+
+        }
+        void tenZadan(int[] arr)
+        {
+            otvet.Text = "Массив:"; for (int i = 0; i < 10; i++)
+            {
+                otvet.Text += arr[i] + " ";
+
+            }
+            otvet.Text += "\n Ответ:";
+            int temp = 0;
+            for (int i = 1; i < 9; i++)
+            {
+                if ((arr[0] > arr[i]) && (arr[9] < arr[i])) { otvet.Text += arr[i] + " "; temp += 1; }
+
+            }
+            otvet.Text += "; \n" + temp + " элементов";
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        void tweZadan(int[] arr)
+        {
+            otvet.Text = "Массив:"; int temp = Math.Abs(arr[1]);
+            for (int i = 0; i < 10; i++)
+            {
+                otvet.Text += arr[i] + " ";
+            }
+            otvet.Text += "\n Ответ:";
+            char[] array = Convert.ToString(temp).ToCharArray();
+            char[] array1;
+            int[] A = new int[10]; int Sov;
+            for (int j = 0; j < 10; j++)
+            {
+                Sov = 0;
+                if (j != 1)
+                {
+                    array1 = Convert.ToString(Math.Abs(arr[j])).ToCharArray();
+                    for (int i = (array.Length) - 1, R = (array1.Length) - 1; (i >= 0) && (R >= 0); R--, i--)
+                    {
+                        if (array[i] == array1[R]) Sov += 1;
+
+                    }
+                }
+                A[j] = Sov;
+            }
+            int bol = 0;
+            for (int i = 0; i < 10; i++)
+            {
+                if (A[i] > bol) bol = A[i];
+            }
+            if (bol != 0)
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    if (A[i] == bol) otvet.Text += arr[i] + " ";
+                }
+            }
+            else
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    Sov = 0;
+                    if (j != 1)
+                    {
+                        array1 = Convert.ToString(Math.Abs(arr[j])).ToCharArray();
+                        for (int i = (array.Length) - 1; i >= 0; i--)
+                            for (int R = (array1.Length) - 1; R >= 0; R--)
+                            {
+                                if (array[i] == array1[R]) Sov += 1;
+                            }
+                    }
+                    A[j] = Sov;
+                }
+                for (int i = 0; i < 10; i++)
+                {
+                    if (A[i] > bol) bol = A[i];
+                }
+                if (bol != 0)
+                {
+                    for (int i = 0; i < 10; i++)
+                    {
+                        if (A[i] == bol) otvet.Text += arr[i] + " ";
+                    }
+                }
+
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        void FoZadan(int[] arr)
+        {
+            int temp = 0;
+            otvet.Text = "Массив:";
+            for (int i = 0; i < 10; i++)
+            {
+                otvet.Text += arr[i] + " ";
+            }
+            otvet.Text += "\n Ответ:";
+            for (int i = 0; i < 10; i++)
+            {
+                if (arr[i] % 3 == 0) { otvet.Text += arr[i] + " "; temp += 1; }
+            }
+            otvet.Text += ";\n " + temp;
+        }
 
     }
 
