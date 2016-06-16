@@ -182,7 +182,7 @@ namespace WpfApplication1
                     OneZadan(array);
                     break;
                 case ("2"):
-                    
+                    twoZadan(array);
                     break;
                 case ("3"):
                     
@@ -324,6 +324,18 @@ namespace WpfApplication1
             else { PO.Text = 1.ToString(); max.IsEnabled = false; min.IsEnabled = false; ZZ.IsEnabled = false; XX.IsEnabled = false; }
             }
 
+        void twoZadan(int[] arr)
+        {
+            otvet.Text = "Массив:";
+            for (int i = 0; i < 10; i++)
+            {
+                otvet.Text += arr[i] + " ";
+            }
+            for (int i = 0; i < 10; i++)
+            {
+                if (arr[i] > 25) { otvet.Text += "\n Ответ:" + (i + 1); break; }
+            }
+        }
 
     }
 
