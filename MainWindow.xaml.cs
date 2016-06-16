@@ -210,7 +210,7 @@ namespace WpfApplication1
                     
                     break;
                 case ("11"):
-                    
+                    eleZadan(array);
                     break;
                 case ("12"):
                     
@@ -585,6 +585,19 @@ namespace WpfApplication1
                     if ((arr[i] < 0) && (temp == 1)) { temp = 0; temp1 += 1; }
             }
             otvet.Text += "\n Ответ: " + temp1;
+        }
+        void eleZadan(int[] arr)
+        {
+            otvet.Text = "Массив:"; for (int i = 0; i < 10; i++)
+            {
+                otvet.Text += arr[i] + " ";
+
+            }
+            otvet.Text += "\n Ответ:";
+            for (int i = 0; i < 10; i++)
+            {
+                if (arr[i] > 0) otvet.Text += arr[i] + " ";
+            }
         }
 
     }
