@@ -20,6 +20,7 @@ using System.Threading;
 using System.Drawing;
 using System.Timers;
 using ZedGraph;
+using System.Windows.Controls.DataVisualization.Charting;
 namespace WpfApplication1
 {
 
@@ -33,13 +34,13 @@ namespace WpfApplication1
 
         public MainWindow()
         {
-
+            
             InitializeComponent();
             if (SS.Text == "")
                 Pusk.IsEnabled = false;
             else Pusk.IsEnabled = true;
             but1.IsChecked = true;
-
+           seszadan();
         }
 
         private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
@@ -185,7 +186,7 @@ namespace WpfApplication1
                     twoZadan(array);
                     break;
                 case ("3"):
-                    
+                    triZadan(array);
                     break;
                 case ("4"):
                     foZadan(array);
@@ -194,10 +195,10 @@ namespace WpfApplication1
                     fifZadan(array);
                     break;
                 case ("6"):
-                    
+                    sixZadan(array); 
                     break;
                 case ("7"):
-                    
+                    sevenZadan(array);
                     break;
                 case ("8"):
                     
@@ -336,6 +337,212 @@ namespace WpfApplication1
                 if (arr[i] > 25) { otvet.Text += "\n Ответ:" + (i + 1); break; }
             }
         }
+        void triZadan(int[] arr)
+        {
+            otvet.Text = "Массив:"; for (int i = 0; i < 10; i++)
+            {
+                otvet.Text += arr[i] + " ";
+            }
+            otvet.Text += "\n Ответ:";
+            for (int j = 0; j < 9; j++)
+                for (int i = j + 1; i < 10; i++)
+                {
+                    if (arr[1] < (arr[j] + arr[i])) otvet.Text += arr[j] + "+" + arr[i] + "=" + (arr[j] + arr[i] + "; ");
+                }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        void sixZadan(int[] arr)
+        {
+            otvet.Text = "Массив:"; for (int i = 0; i < 10; i++)
+            {
+                otvet.Text += arr[i] + " ";
+            }
+            otvet.Text += "\n Ответ";
+            for (int i = 0; i < 10; i++)
+            {
+                if (arr[i] > arr[3]) otvet.Text += " " + arr[i] + "; ";
+            }
+
+        }
+        void sevenZadan(int[] arr)
+        {
+            otvet.Text = "Массив:"; for (int i = 0; i < 10; i++)
+            {
+                otvet.Text += arr[i] + " ";
+            }
+            otvet.Text += "\n Ответ:";
+            int temp;
+            for (int j = 0; j < 9; j++)
+                for (int i = j + 1; i < 10; i++)
+                {
+
+                    if (21 > (arr[j] + arr[i])) otvet.Text += arr[j] + "+" + arr[i] + "=" + (arr[j] + arr[i] + "; ");
+                }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        void seszadan()
+        {
+            int[] array = new int[10];
+            int N, M;
+            {
+
+                Random Rand = new Random();
+                for (int i = 0; i < 10; i++)
+                {
+                    array[i] = Rand.Next(-100, 100);
+                }
+
+                List<KeyValuePair<string, int>> valueList = new List<KeyValuePair<string, int>>();
+                for (int i = 0; i < 10; i++)
+                    valueList.Add(new KeyValuePair<string, int>((i + 1).ToString(), array[i]));
+
+
+                //Setting data for column chart
+                graf.DataContext = valueList;
+            }
+        }
+      
 
 
 
