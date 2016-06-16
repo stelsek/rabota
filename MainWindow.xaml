@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit" WindowStyle="SingleBorderWindow" Background="Gray" x:Class="WpfApplication1.MainWindow"
-        Title="Лабораторная работа" Height="364.285" Width="522.263">
+        Title="Лабораторная работа" Height="347.785" Width="925.763">
 
     <Grid Margin="0,0,2,0">
         <ComboBox  x:Name="SS"  HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged">
@@ -21,7 +21,7 @@
             <ComboBoxItem Content="13"/>
             <ComboBoxItem Content="14"/>
             <ComboBoxItem Content="15"/>
-            <ComboBoxItem Content="16"/>
+             
         </ComboBox>
         <Button x:Name="Pusk" Content="Пуск!" HorizontalAlignment="Left" Margin="10,239,0,0" VerticalAlignment="Top" Width="83" Click="Pusk_Click" Height="70"/>
         <TextBox x:Name="otvet" HorizontalAlignment="Left" Height="119" Margin="231,190,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="259"/>
@@ -38,5 +38,10 @@
         <Label x:Name="ZZ"  Content="Нижний предел" HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top" Width="102"/>
         <Label x:Name="XX"  Content="Верхний предел" HorizontalAlignment="Left" Margin="127,181,0,0" VerticalAlignment="Top" Height="25" Width="99"/>
         <TextBox x:Name="PO" Visibility="Collapsed" HorizontalAlignment="Left" Height="23" Margin="370,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        
+        <chartingToolkit:Chart  Background="DarkCyan" Height="297" HorizontalAlignment="Left" Margin="508,0,0,10" x:Name="graf" Title="16. &quot;Отобразить массив виде гистораммы.&quot;" VerticalAlignment="Bottom" Width="398">
+            <chartingToolkit:ColumnSeries   DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding}" Title="Массив" Margin="-2,0,2,0" />
+        </chartingToolkit:Chart>
+
     </Grid>
 </Window>
