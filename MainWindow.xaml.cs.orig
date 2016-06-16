@@ -222,7 +222,7 @@ namespace WpfApplication1
                     FoZadan(array);
                     break;
                 case ("15"):
-                    fiftZadan(array);
+                    
                     break;
                 case ("16"):
                     
@@ -810,19 +810,6 @@ namespace WpfApplication1
                 if (arr[i] % 3 == 0) { otvet.Text += arr[i] + " "; temp += 1; }
             }
             otvet.Text += ";\n " + temp;
-        }
-        void fiftZadan(int[] arr)
-        {
-            int temp = 0;
-            otvet.Text = "Массив:";
-            for (int i = 0; i < 10; i++)
-            {
-                otvet.Text += arr[i];
-                if (arr[4] > arr[i] && i != 4) { temp += arr[i]; otvet.Text += "* "; }
-                else otvet.Text += " ";
-            }
-
-            otvet.Text += "\n Ответ:" + temp;
         }
 
     }
