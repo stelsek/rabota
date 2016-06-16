@@ -185,7 +185,7 @@ namespace WpfApplication1
                     twoZadan(array);
                     break;
                 case ("3"):
-                    
+                    triZadan(array);
                     break;
                 case ("4"):
                    
@@ -335,6 +335,19 @@ namespace WpfApplication1
             {
                 if (arr[i] > 25) { otvet.Text += "\n Ответ:" + (i + 1); break; }
             }
+        }
+        void triZadan(int[] arr)
+        {
+            otvet.Text = "Массив:"; for (int i = 0; i < 10; i++)
+            {
+                otvet.Text += arr[i] + " ";
+            }
+            otvet.Text += "\n Ответ:";
+            for (int j = 0; j < 9; j++)
+                for (int i = j + 1; i < 10; i++)
+                {
+                    if (arr[1] < (arr[j] + arr[i])) otvet.Text += arr[j] + "+" + arr[i] + "=" + (arr[j] + arr[i] + "; ");
+                }
         }
 
     }
