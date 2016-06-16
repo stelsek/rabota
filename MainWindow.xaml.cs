@@ -600,6 +600,35 @@ namespace WpfApplication1
             }
         }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        void wriZadan(int[] arr)
+        {
+            int temp = 0;
+            otvet.Text = "Массив:"; for (int i = 0; i < 10; i++)
+            {
+                otvet.Text += arr[i] + " ";
+                if (arr[i] > 0) temp += 1;
+            }
+            otvet.Text += "\n Ответ:" + temp;
+        }
+
+
     }
 
 
